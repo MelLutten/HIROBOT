@@ -16,6 +16,10 @@ void grille::paintEvent(QPaintEvent *e)
     int width = 40;
     int height = 40;
 
+
+
+
+
     QBrush brush1("#242424", Qt::SolidPattern);
     QBrush brush2("#2F2F2F", Qt::SolidPattern);
     QPen pen1("#242424");
@@ -38,6 +42,32 @@ void grille::paintEvent(QPaintEvent *e)
                  painter.fillRect(r1, brush2);
            }
 
+            if(d_terrain.positionJoueur()->numLigne()==i && d_terrain.positionJoueur()->numColonne()==j && d_terrain.grille()[static_cast<unsigned>(i)][static_cast<unsigned>(j)]==1){
+
+                painter.drawImage(r1,QImage("/Users/Neron/Desktop/joueur.png"));
+
+            }
+            if(d_terrain.grille()[static_cast<unsigned>(i)][static_cast<unsigned>(j)]==2){
+
+                painter.drawImage(r1,QImage("/Users/Neron/Desktop/robot1G.png"));
+
+            }
+            if(d_terrain.grille()[static_cast<unsigned>(i)][static_cast<unsigned>(j)]==3){
+
+                painter.drawImage(r1,QImage("/Users/Neron/Desktop/robot2G.png"));
+
+            }
+            if(d_terrain.grille()[static_cast<unsigned>(i)][static_cast<unsigned>(j)]==4){
+
+                painter.drawImage(r1,QImage("/Users/Neron/Desktop/debris.png"));
+
+            }
+            if(d_terrain.grille()[static_cast<unsigned>(i)][static_cast<unsigned>(j)]==5){
+
+                painter.drawImage(r1,QImage("/Users/Neron/Desktop/explo.png"));
+
+            }
+
 
             painter.drawRect(r1);
             left+=51;
@@ -52,3 +82,11 @@ void grille::paintEvent(QPaintEvent *e)
 
 
 }
+
+
+
+
+
+
+
+
