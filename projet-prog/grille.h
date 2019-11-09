@@ -28,8 +28,12 @@ public :
 private :
     terrain d_terrain;
 
+
     void vueCreer();
-    void paintEvent(QPaintEvent *e);
+   // void vueAfficheTerrain();
+   void paintEvent(QPaintEvent *e);
+
+
 
 };
 
